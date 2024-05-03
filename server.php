@@ -3,8 +3,8 @@
 $paragraph = $_GET["paragrafo"];
 $badwords = ("stronzo");
 $replacement = ("***");
-$cleanParagraph= str_replace($badwords,$replacement,$paragraph);
-$numeroSostituzioni= str_replace($badwords,$replacement,$paragraph, $count);
+$cleanParagraph= str_replace($badwords,$replacement,$paragraph,$count);
+// $numeroSostituzioni= str_replace($badwords,$replacement,$paragraph, $count);
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +16,30 @@ $numeroSostituzioni= str_replace($badwords,$replacement,$paragraph, $count);
 </head>
 <body>
     <h1>IL TUO CENSURATORE DI PAROLACCE </h1>
-    <span><?php echo $paragraph?></span>
+    <h2><?php echo $paragraph?></h2>
     <br>
     <span>Lunghezza paragrafo in bit: <?php echo strlen($paragraph)?></span>
     <br>
-    <span><?php echo $cleanParagraph?></span>
+    <h2><?php echo $cleanParagraph?></h2>
     <br>
     <span>Lunghezza paragrafo nuovo in bit: <?php echo strlen( $cleanParagraph)?></span>
     <br>
-    <span>Numero di volte che la parola è stata sostituita: <?php echo $count?></span>
+    <h2>Numero di volte che la parola è stata sostituita: <?php echo $count?></h2>
 </body>
 </html>
+
+<style>
+    *{
+        text-align: center;
+    }
+    h1{
+        font-size: 50px;
+        margin-bottom: 100px;
+    }
+    h2{
+        font-size: 45px;
+    }
+    span{
+        font-size: 30px;    
+    }
+</style>
